@@ -93,6 +93,12 @@ function Home() {
                         <span className="focus"></span>
                     </div>
                 </div>
+                <div className="title">
+                    Product
+                </div>
+                <div className="information">
+                    {data.length} Product Found
+                 </div>
                 <ul className="card-grid">
                     {search(data).map((item) => (
                         <li>

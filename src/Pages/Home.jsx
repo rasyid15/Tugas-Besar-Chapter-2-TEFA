@@ -93,6 +93,12 @@ function Home() {
                         <span className="focus"></span>
                     </div>
                 </div>
+                <div className="title">
+                    Product
+                </div>
+                <div className="information">
+                        {data.length} Product Found
+                    </div>
                 <ul className="card-grid">
                     {search(data).map((item) => (
                         <li>
@@ -110,9 +116,8 @@ function Home() {
                                             <span>{item.description}</span>
                                         </li>
                                         <li>
-                                            Rp <span>{item.price}</span>
+                                            <h3><span>Rp.{item.price},-</span></h3>
                                         </li>
-                                      
                                     </ol>
                                 </div>
                             </article>

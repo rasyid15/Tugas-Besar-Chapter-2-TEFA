@@ -26,7 +26,7 @@ function Home() {
             );
     }, []);
 
-    const data = Object.values(items);
+    const data = Object.values(items)
 
     function search(items) {
         return items.filter((item) => {

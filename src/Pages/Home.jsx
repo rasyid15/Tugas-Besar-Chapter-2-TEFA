@@ -63,6 +63,16 @@ function Home() {
     } else {
         return (
             <div className="wrapper">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+            <nav>
+    <div className="logo">
+   Kelompok 5
+    </div>
+    <label htmlFor="click" className="menu-btn">
+ 
+    </label>
+    
+  </nav>
                 <div className="search-wrapper">
                     <label htmlFor="search-form">
                         <input

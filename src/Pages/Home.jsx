@@ -11,7 +11,7 @@ function Home() {
 
     useEffect(() => {
         fetch(
-            "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/1f2898db-ceb4-4565-a1eb-2d3beb8a509c/product.json?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230128%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230128T070926Z&X-Amz-Expires=86400&X-Amz-Signature=c9f59a346d3e44bd3068dfe2842648238c4f0287cd623f1e40018bb95bb8c085&X-Amz-SignedHeaders=host&x-id=GetObject"
+            "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/1f2898db-ceb4-4565-a1eb-2d3beb8a509c/product.json?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230130%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230130T102102Z&X-Amz-Expires=86400&X-Amz-Signature=bd842c87d5047e490c834d665dac94ec500dcff94481abc23e3865221e6b5985&X-Amz-SignedHeaders=host&x-id=GetObject"
         )
             .then((res) => res.json())
             .then(
@@ -62,8 +62,10 @@ function Home() {
         return <>loading...</>;
     } else {
         return (
-            <div className="wrapper">
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+            
+            <div className="home">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <div className="w">
             <nav>
     <div className="logo">
    Kelompok 5
@@ -73,6 +75,8 @@ function Home() {
     </label>
     
   </nav>
+            </div>
+            <div className="wrapper">
                 <div className="search-wrapper">
                     <label htmlFor="search-form">
                         <input
@@ -109,10 +113,14 @@ function Home() {
                 <div className="information">
                         {data.length} Product Found
                     </div>
+                </div>
+                
+                <div className="wrapper2">
+                
                 <ul className="card-grid">
                     {search(data).map((item) => (
                         <li>
-                            <article className="card" key={item.alpha3Code}>
+                            <article className="card" key={item.name}>
                                 <div className="card-image">
                                     <img
                                         src={item.image}
@@ -135,7 +143,9 @@ function Home() {
                         </li>
                     ))}
                 </ul>
+                </div>
             </div>
+            
         );
     }
 }

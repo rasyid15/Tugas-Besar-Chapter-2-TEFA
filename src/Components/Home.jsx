@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../Assets/CSS/Home.css'
+import './CSS/Home.css'
 
 function Home() {
     const [error, setError] = useState(null);
@@ -9,9 +9,10 @@ function Home() {
     const [searchParam] = useState(["name", "description", "category"]);
     const [filterParam, setFilterParam] = useState(["All"]);
 
+
     useEffect(() => {
         fetch(
-            "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/1f2898db-ceb4-4565-a1eb-2d3beb8a509c/product.json?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230130%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230130T102102Z&X-Amz-Expires=86400&X-Amz-Signature=bd842c87d5047e490c834d665dac94ec500dcff94481abc23e3865221e6b5985&X-Amz-SignedHeaders=host&x-id=GetObject"
+            "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/1f2898db-ceb4-4565-a1eb-2d3beb8a509c/product.json?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230131%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230131T142140Z&X-Amz-Expires=86400&X-Amz-Signature=7077f6a3b68b98512c6da724f2cb9d4fcb274f9c7be36c3f7b4ad6a90218d4ef&X-Amz-SignedHeaders=host&x-id=GetObject"
         )
             .then((res) => res.json())
             .then(
@@ -27,7 +28,7 @@ function Home() {
     }, []);
 
     const data = Object.values(items)
-
+    
     function search(items) {
         return items.filter((item) => {
             if (item.category == filterParam) {
@@ -55,7 +56,7 @@ function Home() {
     if (error) {
         return (
             <p>
-            Api Mungkin bermasalah
+            Api Mungkin bermasalah, segera update API anda dengan API yang sudah disediakan di studycase
             </p>
         );
     } else if (!isLoaded) {
@@ -100,6 +101,7 @@ function Home() {
                             aria-label="Filter Product By Category"
                         >
                             <option value="All">Filter By Category</option>
+                            <option value="sortedPrice">Price</option>
                             <option value="Ready">Ready</option>
                             <option value="Barang Bekas">Barang Bekas</option>
                             <option value="Pre-Order">Pre-Order</option>
@@ -111,7 +113,7 @@ function Home() {
                     Product
                 </div>
                 <div className="information">
-                        {data.length} Product Found
+                {data.length} Product Found
                     </div>
                 </div>
                 

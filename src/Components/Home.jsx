@@ -101,7 +101,6 @@ function Home() {
                             aria-label="Filter Product By Category"
                         >
                             <option value="All">Filter By Category</option>
-                            <option value="sortedPrice">Price</option>
                             <option value="Ready">Ready</option>
                             <option value="Barang Bekas">Barang Bekas</option>
                             <option value="Pre-Order">Pre-Order</option>

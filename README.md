@@ -2,6 +2,18 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Design and Prototype
+
+#### Design
+https://s.id/Design-ProductList-Group5
+
+#### Protoype
+Phone
+https://s.id/Prototype-Phone-ProductList-Group5
+
+Website
+https://s.id/Prototype-Web-ProductList-Group5
+
 ## Available Scripts
 
 In the project directory, you can run:

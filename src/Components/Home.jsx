@@ -12,7 +12,7 @@ function Home() {
 
     useEffect(() => {
         fetch(
-            "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/1f2898db-ceb4-4565-a1eb-2d3beb8a509c/product.json?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230131%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230131T142140Z&X-Amz-Expires=86400&X-Amz-Signature=7077f6a3b68b98512c6da724f2cb9d4fcb274f9c7be36c3f7b4ad6a90218d4ef&X-Amz-SignedHeaders=host&x-id=GetObject"
+            "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/1f2898db-ceb4-4565-a1eb-2d3beb8a509c/product.json?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230203%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230203T015913Z&X-Amz-Expires=86400&X-Amz-Signature=84bf0abf885e24f089492646a871ff8b8987b82c8ffa6a022b122a1dcb8a1665&X-Amz-SignedHeaders=host&x-id=GetObject"
         )
             .then((res) => res.json())
             .then(
@@ -28,7 +28,7 @@ function Home() {
     }, []);
 
     const data = Object.values(items)
-    
+
     function search(items) {
         return items.filter((item) => {
             if (item.category == filterParam) {
@@ -56,7 +56,7 @@ function Home() {
     if (error) {
         return (
             <p>
-            Api Mungkin bermasalah, segera update API anda dengan API yang sudah disediakan di studycase
+            Api Mungkin bermasalah, segera update API anda dengan API yang sudah disediakan di studycase 
             </p>
         );
     } else if (!isLoaded) {
@@ -116,7 +116,7 @@ function Home() {
                     </div>
                 </div>
                 
-                <div className="wrapper2">
+                <div className="wrappercard">
                 
                 <ul className="card-grid">
                     {search(data).map((item) => (
